@@ -1,0 +1,23 @@
+{
+  "name": "producer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ip": "^2.0.1",
+    "kafkajs": "^2.2.4",
+    "pdfreader": "^3.0.2",
+    "split-file": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}

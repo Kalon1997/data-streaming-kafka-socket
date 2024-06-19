@@ -1,0 +1,24 @@
+version: "3"
+services:
+  zookeeper:
+    image: zookeeper
+    container_name: zookeeperContainer
+    ports:
+      - 3181:2181
+  kafka:
+    image: confluentinc/cp-kafka
+    container_name: kafkaContainer
+    ports:
+      - 9092:9092
+      # - 8082:8082
+      # - 28082:28082
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: 192.168.0.103:3181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.0.103:9092
+      KAFKA_BROKER_ID: 2 
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+
+      
+      # CONNECT_REST_PORT: 28082
+      # KAFKA_REST_LISTENERS: http://localhost:8082
+    # restart: always
